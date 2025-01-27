@@ -1,0 +1,58 @@
+:root {
+  --primary: #352F2D;
+  --secondary: #E8E3D6; 
+  --accen1: #E6C57D;
+  --accent2: #D7C0BB;
+}
+
+@font-face {
+  font-family: 'PP Migra';
+  src: url('../../public/fonts/Migra-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+
+}
+
+
+h1{
+  font-family: 'PP Migra';
+  font-size: 160pt;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+}
+
+h3{
+  font-family: 'PP Migra';
+  font-size: 56pt;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.83;
+}
+
+p{
+  font-family: "neue-haas-unica", sans-serif;
+  font-weight: 400;
+  font-size:16pt;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+
+p .small{
+  font-family: "neue-haas-unica", sans-serif;
+  font-weight: 400;
+  font-size:14pt;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+button{
+  font-family: "neue-haas-unica", sans-serif;
+  font-weight: 400;
+  font-size:20pt;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
