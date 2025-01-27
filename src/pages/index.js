@@ -1,14 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
+import Hero from "./components/Hero";
+import LineSeparator from "./components/LineSeparator";
 
 const heroData =
 {
   tabs : ["Watch the film", "Pelagie's Story", "Timeline", "The House", "Resources"],
-  title: ["THE, AMOUREUX, HOUSE"],
+  title: ["THE", "AMOUREUX", "HOUSE"],
   subtitle: ["Featuring Pelagie X", "A film by Breakwater Studios"],
   cta: "Visit The House",
-  hero: "public/images/hero/heroImage.webp"
+  hero: "/images/hero/heroImage.webp"
 }
 
 const aboutData = 
@@ -29,7 +31,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        
+        <Hero data={heroData} />
+        <LineSeparator />
       </main>
 
     </>
