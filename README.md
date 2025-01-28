@@ -11,3 +11,7 @@
 20:27 GMT 28/01/2025 : Dinner break
 
 21:48 GMT 28/01/2025 : Clocking back in
+
+23:03 GMT 28/01/2025: Ending for the day
+
+Total time spent so far: 3h27m
