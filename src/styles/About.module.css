@@ -73,3 +73,17 @@
         height: fit-content;
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding-top: 2rem;
+        gap:1rem;
+    }
+
+    .images{
+        padding: 1rem;
+    }
+    
+}
+

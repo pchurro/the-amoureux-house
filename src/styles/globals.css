@@ -28,6 +28,7 @@ html, body{
   font-style: normal;
   letter-spacing: -0.02em;
   line-height: 1.5;
+  background-color: var(--primary);
 }
 
 h1{

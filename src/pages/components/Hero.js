@@ -1,5 +1,6 @@
 import styles from "@/styles/Hero.module.css";
 import Image from "next/image";
+import NavTabs from "./NavTabs";
 
 export default function Hero({ data }) {
 
@@ -28,18 +29,20 @@ export default function Hero({ data }) {
                 
             </div> */}
 
-            <div className={styles.navTabs}>
-                {data.tabs.map((tab, index) => (
-                    <span key={index} className={`regular`}>
-                        {tab}
-                    </span>
-                ))}
+            <div className={styles.nav}>
+                <NavTabs tabs={data.tabs} />
             </div>
+
 
             <h1 className={styles.titleThe}>{data.title[0]}</h1>
 
             <div className={styles.image}>
                 <Image src={data.hero.source} width={data.hero.width} height={data.hero.height} alt={data.hero.alt} />
+                <div className={styles.playFilmWrapper}>
+                    <div className={styles.playFilm}>
+                        <span className="small">Play Film</span>
+                    </div>
+                </div>
             </div>
 
             <h1 className={styles.titleAmoureux}>{data.title[1]}</h1>
