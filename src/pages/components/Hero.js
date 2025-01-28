@@ -6,28 +6,6 @@ export default function Hero({ data }) {
 
     return (
         <section className={styles.hero}>
-            {/* <div className={styles.firstRow}>
-                <div className={styles.firstColumn}>
-                    <div className={styles.navTabs}>
-                        {data.tabs.map((tab, index) => (
-                            <span key={index} className={styles.tab}>
-                                {tab}
-                            </span>
-                        ))}
-                    </div>
-                    <h1>{data.title[0]}</h1>
-
-                </div>
-                <div className={styles.secondColumn}>
-                    <Image src={data.hero} width={1982} height={1018} />
-                </div>
-            </div>
-            <div className={styles.secondRow}>
-                <h1>{data.title[1]}</h1>
-            </div>
-            <div className={styles.thirdRow}>
-                
-            </div> */}
 
             <div className={styles.nav}>
                 <NavTabs tabs={data.tabs} />
