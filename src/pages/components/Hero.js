@@ -48,7 +48,7 @@ export default function Hero({ data }) {
 
             <h1 className={styles.titleHouse}>{data.title[2]}</h1>
 
-            <span className={styles.button}>{data.cta}</span>
+            <span className={`${styles.button} button`}>{data.cta}</span>
 
 
         </section>
