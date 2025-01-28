@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Hero from "./components/Hero";
 import LineSeparator from "./components/LineSeparator";
+import About from "./components/About";
 
 const heroData =
 {
@@ -10,14 +11,44 @@ const heroData =
   title: ["THE", "AMOUREUX", "HOUSE"],
   subtitle: ["Featuring Pelagie X", "A film by Breakwater Studios"],
   cta: "Visit The House",
-  hero: "/images/hero/heroImage.webp"
+  hero: {
+    source: "/images/hero/heroImage.webp",
+    width: 1982,
+    height: 1018,
+    alt: "The Amoureux House hero image"
+  }
 }
 
 const aboutData = 
 {
   title: "PELAGIE'S STORY",
   text: ["AmoureuxHouse.org aims to make the cultural, historical, and architectural significance of the Amoureux House in Ste. Genevieve come alive for all, particularly youth and educators. The heart of AmoureuxHouse.org is the life of Pelagie Vital Amoureux, a remarkable woman who made this architectural gem her home. We hope discovering Pelagie’s story will inspire others to find their own stories, experience the universal truths of home and community, and bring Ste. Genevieve’s rich African-American history to the fore.", "Born into slavery in Ste. Genevieve, Missouri, in 1805, Pelagie raised her family in the Amoureux House, built in 1792. Today you can visit this rare example of French Creole architecture, located just 60 miles south of St. Louis.", "Our hope is that learning about Pelagie, her house, and the times in which she lived will pique your curiosity to wonder and ask questions. Did she cook a tasty gumbo? What did she and her family laugh and talk about? Where did she find her strength?", "We hope that asking such questions will cast a light on our shared humanity. Pelagie chose to live her life fully. She kept moving forward. She knew the true sense of courage."],
-  images: ["public/images/about/aboutImage1.webp", "public/images/about/aboutImage2.webp", "public/images/about/aboutImage3.webp", "public/images/about/aboutImage4.webp"],
+  images: [
+    {
+      source: "/images/about/aboutImage1.webp",
+      width: 1310,
+      height: 950,
+      alt: "About section image 1"
+    },
+    {
+      source: "/images/about/aboutImage3.webp", 
+      width: 1382,
+      height: 1032,
+      alt: "About section image 2"
+    },
+    {
+      source: "/images/about/aboutImage2.webp",
+      width: 1596,
+      height: 1504, 
+      alt: "About section image 3"
+    },
+    {
+      source: "/images/about/aboutImage4.webp",
+      width: 1682,
+      height: 1504,
+      alt: "About section image 4"
+    }
+  ],
   cta: "Download the app"
 }
 
@@ -33,6 +64,7 @@ export default function Home() {
       <main className={styles.main}>
         <Hero data={heroData} />
         <LineSeparator />
+        <About data={aboutData} />
       </main>
 
     </>

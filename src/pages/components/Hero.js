@@ -39,7 +39,7 @@ export default function Hero({ data }) {
             <h1 className={styles.titleThe}>{data.title[0]}</h1>
 
             <div className={styles.image}>
-                <Image src={data.hero} width={1982} height={1018} />
+                <Image src={data.hero.source} width={data.hero.width} height={data.hero.height} alt={data.hero.alt} />
             </div>
 
             <h1 className={styles.titleAmoureux}>{data.title[1]}</h1>

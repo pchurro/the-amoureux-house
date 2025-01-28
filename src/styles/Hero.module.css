@@ -78,6 +78,9 @@
 .subtitle {
     grid-row: 4;
     grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
 }
 
 .titleHouse {
@@ -91,8 +94,46 @@
     align-self: center;
 }
 
-.subtitle {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
+@media screen and (max-width: 1024px) {
+
+    .navTabs{
+        display: none;
+    }
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+
+    .titleThe {
+        grid-column: 1/2;
+        grid-row: 1;
+        align-self: flex-start;
+    }
+
+    .titleAmoureux {
+        grid-column: 1/2;
+        grid-row: 2;
+        text-align: end;
+    }
+
+    .titleHouse {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .image {
+        grid-column: 1/2;
+        grid-row: 4;
+    
+    }
+
+    .button{
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+
+    
+
 }
