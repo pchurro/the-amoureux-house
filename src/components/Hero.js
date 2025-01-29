@@ -6,7 +6,7 @@ import RevealComponent from "./RevealComponent";
 import { useState, useRef } from "react";
 import HeroImage from "./HeroImage";
 import Lottie from "lottie-react";
-import hoverCircle from "../../../public/lottie/circle.json";
+import hoverCircle from "../../public/lottie/circle.json";
 
 // Hero Section
 

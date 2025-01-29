@@ -21,3 +21,7 @@ Total time spent so far: 3h27m
 20:56 GMT 29/01/2025 : Dinner break
 
 21:35 GMT 29/01/2025 : Returning for final session
+
+23:25 GMT 29/01/2025 : Project done
+
+Total time spent: 6h06

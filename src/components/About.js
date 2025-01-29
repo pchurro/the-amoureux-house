@@ -6,7 +6,7 @@ import SplitText from "./SplitText/SplitText";
 import ImageWrapper from "./ImageWrapper";
 import { motion } from "motion/react";
 import Lottie from "lottie-react";
-import hoverUnderline from "../../../public/lottie/underline.json";
+import hoverUnderline from "../../public/lottie/underline.json";
 import { useRef } from "react";
 
 //About Section
