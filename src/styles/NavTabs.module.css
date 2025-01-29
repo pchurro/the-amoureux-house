@@ -9,7 +9,7 @@
 }
 
 .mobileMenu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,15 +17,30 @@
     background-color: var(--accent1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-bottom: 20%;
     align-items: center;
     row-gap: 1rem;
     z-index: 2;
 
 }
 
+.tabsWrapper {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 1rem;
+    align-items: center;
+}
+
 .mobileMenu span {
     color: var(--primary);
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    line-height: 1;
 }
 
 @media screen and (max-width: 1024px) {
@@ -40,7 +55,12 @@
 
     .navButton {
         align-self: flex-end;
-        cursor: pointer;
         z-index: 3;
+        transition: 1s;
+        position: relative;
+    }
+
+    .image{
+        padding: 2rem;
     }
 }

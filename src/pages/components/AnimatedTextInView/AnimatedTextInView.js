@@ -11,7 +11,8 @@ export default function AnimatedTextInView({
   style = {},
   threshold = 0.5,
   component: Component = motion.div,
-  globalDelay = 0
+  globalDelay = 0,
+  fadeOut = false
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -20,9 +21,9 @@ export default function AnimatedTextInView({
   });
 
   const letterAnimation = {
-    initial: { opacity: 0 },
+    initial: fadeOut ? {opacity:1} : { opacity: 0 },
     animate: i => ({
-      opacity: 1,
+      opacity: fadeOut ? 0 : 1 ,
       transition: {
         delay: globalDelay + Math.random() * delay,
         duration: duration

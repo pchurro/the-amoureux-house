@@ -18,6 +18,12 @@ const heroData =
     width: 1982,
     height: 1018,
     alt: "The Amoureux House hero image"
+  },
+  navImage:{
+    source: "/images/about/aboutImage1.webp",
+    width: 1310,
+    height: 950,
+    alt: "About section image 1"
   }
 }
 

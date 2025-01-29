@@ -11,7 +11,7 @@ export default function Hero({ data }) {
         <section className={styles.hero}>
 
             <div className={styles.nav}>
-                <NavTabs tabs={data.tabs} />
+                <NavTabs image={data.navImage} tabs={data.tabs} />
             </div>
 
 
@@ -20,7 +20,7 @@ export default function Hero({ data }) {
             <motion.div className={styles.image} layout layoutId="loaderImage"
                 transition={{ duration: 1, ease: [0.85, 0, 0.15, 1] }}
             >
-                <Image src={data.hero.source} width={data.hero.width} height={data.hero.height} alt={data.hero.alt} />
+                <div className={styles.imageWrapper}><Image src={data.hero.source} width={data.hero.width} height={data.hero.height} alt={data.hero.alt} /></div>
                 <div className={styles.playFilmWrapper}>
                     <div className={styles.playFilm}>
                         <span className="small">Play Film</span>
@@ -32,8 +32,8 @@ export default function Hero({ data }) {
 
             <p className={`small ${styles.subtitle}`}>
                 <RevealComponent>
-                    <div style={{overflow:"hidden"}}><motion.div initial={{y:"100%"}} animate={{y:0}} transition={{ease: [0.25, 1, 0.5, 1], duration:0.5}}>{data.subtitle[0]}</motion.div></div>
-                    <div style={{overflow:"hidden"}}><motion.div initial={{y:"100%"}} animate={{y:0}} transition={{ease: [0.25, 1, 0.5, 1], duration:0.5, delay:0.1}} >{data.subtitle[1]}</motion.div></div>
+                    <div style={{ overflow: "hidden" }}><motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ ease: [0.25, 1, 0.5, 1], duration: 0.5 }}>{data.subtitle[0]}</motion.div></div>
+                    <div style={{ overflow: "hidden" }}><motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ ease: [0.25, 1, 0.5, 1], duration: 0.5, delay: 0.1 }} >{data.subtitle[1]}</motion.div></div>
                 </RevealComponent>
             </p>
 
