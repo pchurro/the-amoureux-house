@@ -19,6 +19,7 @@
     position: relative;
     z-index: 2;
     display: block;
+    border-radius: 8px;
 }
 
 .loaderImage img{
@@ -27,6 +28,7 @@
     position: relative;
     display: block;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .imageCover{
@@ -34,4 +36,5 @@
     height: 100%;
     position: absolute;
     background-color: var(--accent1);
+    border-radius: 8px;
 }

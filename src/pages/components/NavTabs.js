@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "@/styles/NavTabs.module.css";
+import AnimatedTextInView from "./AnimatedTextInView";
 
 export default function NavTabs({ tabs }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ export default function NavTabs({ tabs }) {
             <div className={styles.navTabs}>
                 {tabs.map((tab, index) => (
                     <span key={index} className={`regular`}>
-                        {tab}
+                        <AnimatedTextInView duration={0.5}>{tab}</AnimatedTextInView>
                     </span>
                 ))}
             </div>

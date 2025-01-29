@@ -1,32 +1,112 @@
 import styles from "@/styles/About.module.css";
 import Image from "next/image";
+import AnimatedTextInView from "./AnimatedTextInView";
+import RevealComponent from "./RevealComponent";
+import SplitText from "./SplitText/SplitText";
+import ImageWrapper from "./ImageWrapper";
+import { motion } from "motion/react";
 
 export default function About({ data }) {
     return (
         <section className={styles.about}>
-            <h3 className={styles.title}>{data.title}</h3>
+            <h3 className={styles.title}><AnimatedTextInView threshold={0.75} duration={1}>{data.title}</AnimatedTextInView></h3>
             <div className={styles.textFirstColumn}>
-                <p className="regular">{data.text[0]}</p>
-                <p className="regular">{data.text[1]}</p>
-                
+                <p className="regular">
+                    <RevealComponent>
+                        <SplitText
+                            LineWrapper={({ lineIndex, children }) => (
+                                <div key={lineIndex} style={{ overflow: "hidden" }}>
+                                    <motion.div
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        transition={{ delay: lineIndex * 0.05, ease: [0.25, 1, 0.5, 1], duration: 0.5 }}
+                                    >
+                                        {children}
+                                    </motion.div>
+                                </div>
+                            )}
+                        >
+                            {data.text[0]}
+                        </SplitText>
+                    </RevealComponent>
+                </p>
+                <p className="regular">
+                    <RevealComponent>
+                        <SplitText
+                            LineWrapper={({ lineIndex, children }) => (
+                                <div key={lineIndex} style={{ overflow: "hidden" }}>
+                                    <motion.div
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        transition={{ delay: lineIndex * 0.05, ease: [0.25, 1, 0.5, 1], duration: 0.5 }}
+                                    >
+                                        {children}
+                                    </motion.div>
+                                </div>
+                            )}
+                        >
+                            {data.text[1]}
+                        </SplitText>
+                    </RevealComponent>
+                </p>
+
             </div>
 
             <div className={styles.textSecondColumn}>
-                <p className="regular">{data.text[2]}</p>
-                <p className="regular">{data.text[3]}</p>
+                <p className="regular">
+                    <RevealComponent>
+                        <SplitText
+                            LineWrapper={({ lineIndex, children }) => (
+                                <div key={lineIndex} style={{ overflow: "hidden" }}>
+                                    <motion.div
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        transition={{ delay: lineIndex * 0.05, ease: [0.25, 1, 0.5, 1], duration: 0.5 }}
+                                    >
+                                        {children}
+                                    </motion.div>
+                                </div>
+                            )}
+                        >
+                            {data.text[2]}
+                        </SplitText>
+                    </RevealComponent>
+                </p>
+                <p className="regular">
+                    <RevealComponent>
+                        <SplitText
+                            LineWrapper={({ lineIndex, children }) => (
+                                <div key={lineIndex} style={{ overflow: "hidden" }}>
+                                    <motion.div
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        transition={{ delay: lineIndex * 0.05, ease: [0.25, 1, 0.5, 1], duration: 0.5 }}
+                                    >
+                                        {children}
+                                    </motion.div>
+                                </div>
+                            )}
+                        >
+                            {data.text[3]}
+                        </SplitText>
+                    </RevealComponent>
+                </p>
             </div>
 
-            <span className={`${styles.CTA} button`}>{data.cta}</span>
+            <span className={`${styles.CTA} button`}><AnimatedTextInView duration={0.5}>{data.cta}</AnimatedTextInView></span>
 
             <div className={styles.images}>
                 <div className={styles.imagesFirstColumn}>
                     {data.images.slice(0, 2).map((image, index) => (
-                        <Image key={index} className={styles.image} src={image.source} alt={image.alt} width={image.width} height={image.height} />
+                        <ImageWrapper key={index} image={image} direction={"left"} />
                     ))}
                 </div>
                 <div className={styles.imagesSecondColumn}>
-                    {data.images.slice(2, 4).map((image, index) => (
-                        <Image key={index} className={styles.image} src={image.source} alt={image.alt} width={image.width} height={image.height} />
+                    {data.images.slice(2, 3).map((image, index) => (
+                        <ImageWrapper key={index} image={image} direction={"right"} />
+                    ))}
+                    {data.images.slice(3, 4).map((image, index) => (
+                        <ImageWrapper key={index} image={image} direction={"right"} width={"75%"} />
                     ))}
                 </div>
             </div>

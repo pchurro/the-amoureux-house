@@ -135,11 +135,7 @@
     }
 
     .playFilmWrapper {
-        position: absolute;
         display: inline;
-        right: 5%;
-        transform: translateY(-25%);
-        animation: rotate 10s linear infinite;
     }
 
     @keyframes rotate {
