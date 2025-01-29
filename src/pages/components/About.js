@@ -5,8 +5,29 @@ import RevealComponent from "./RevealComponent";
 import SplitText from "./SplitText/SplitText";
 import ImageWrapper from "./ImageWrapper";
 import { motion } from "motion/react";
+import Lottie from "lottie-react";
+import hoverUnderline from "../../../public/lottie/underline.json";
+import { useRef } from "react";
+
 
 export default function About({ data }) {
+    const lottieRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        if (lottieRef.current) {
+            lottieRef.current.setDirection(1);
+            lottieRef.current.setSpeed(1.5);// Set direction to forward
+            lottieRef.current.play(); // Play the animation
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (lottieRef.current) {
+            lottieRef.current.setDirection(-1); // Set direction to reverse
+            lottieRef.current.play();
+        }
+    };
+
     return (
         <section className={styles.about}>
             <h3 className={styles.title}><AnimatedTextInView threshold={0.75} duration={1}>{data.title}</AnimatedTextInView></h3>
@@ -93,7 +114,13 @@ export default function About({ data }) {
                 </p>
             </div>
 
-            <span className={`${styles.CTA} button`}><AnimatedTextInView duration={0.5}>{data.cta}</AnimatedTextInView></span>
+            <div className={`${styles.CTA} button`} onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                <span style={{ position: "absolute" }}>{data.cta}</span>
+                <div className={styles.lottieWrapper}>
+                    <Lottie style={{ position: "relative", display: "flex", width: "100%", top: "20%", transform: "scale(0.6)" }} autoplay={false} loop={false} lottieRef={lottieRef} animationData={hoverUnderline} />
+                </div>
+            </div>
 
             <div className={styles.images}>
                 <div className={styles.imagesFirstColumn}>

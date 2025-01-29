@@ -25,7 +25,7 @@ export default function NavTabs({ tabs, image }) {
         <nav>
             <div className={styles.navTabs}>
                 {tabs.map((tab, index) => (
-                    <span key={index} className={`regular`}>
+                    <span key={index} className={`${styles.tab} regular`}>
                         <AnimatedTextInView duration={0.5}>{tab}</AnimatedTextInView>
                     </span>
                 ))}

@@ -4,8 +4,9 @@ import styles from "@/styles/Home.module.css";
 import Hero from "./components/Hero";
 import LineSeparator from "./components/LineSeparator";
 import About from "./components/About";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Loader from "./components/Loader";
+
 
 const heroData =
 {
@@ -63,6 +64,9 @@ const aboutData =
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
+  const ref = useRef(null);
+
+
   return (
     <>
       <Head>
@@ -72,7 +76,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {loading ? <Loader setLoading={setLoading} loaderImage={heroData.hero} /> :
-        <main className={styles.main}>
+        <main className={styles.main} ref={ref}>
           <Hero data={heroData} />
           <LineSeparator />
           <About data={aboutData} />

@@ -1,11 +1,32 @@
 import styles from "@/styles/Hero.module.css";
-import Image from "next/image";
 import NavTabs from "./NavTabs";
-import { motion } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
 import AnimatedTextInView from "./AnimatedTextInView";
 import RevealComponent from "./RevealComponent";
+import { useState, useRef } from "react";
+import HeroImage from "./HeroImage";
+import Lottie from "lottie-react";
+import hoverCircle from "../../../public/lottie/circle.json";
+
 
 export default function Hero({ data }) {
+
+    const lottieRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        if (lottieRef.current) {
+            lottieRef.current.setDirection(1);
+            lottieRef.current.setSpeed(1.5);// Set direction to forward
+            lottieRef.current.play(); // Play the animation
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (lottieRef.current) {
+            lottieRef.current.setDirection(-1); // Set direction to reverse
+            lottieRef.current.play();
+        }
+    };
 
     return (
         <section className={styles.hero}>
@@ -17,16 +38,7 @@ export default function Hero({ data }) {
 
             <h1 className={styles.titleThe}><AnimatedTextInView duration={1}>{data.title[0]}</AnimatedTextInView></h1>
 
-            <motion.div className={styles.image} layout layoutId="loaderImage"
-                transition={{ duration: 1, ease: [0.85, 0, 0.15, 1] }}
-            >
-                <div className={styles.imageWrapper}><Image src={data.hero.source} width={data.hero.width} height={data.hero.height} alt={data.hero.alt} /></div>
-                <div className={styles.playFilmWrapper}>
-                    <div className={styles.playFilm}>
-                        <span className="small">Play Film</span>
-                    </div>
-                </div>
-            </motion.div>
+            <HeroImage heroData={data.hero} />
 
             <h1 className={styles.titleAmoureux}><AnimatedTextInView duration={1} >{data.title[1]}</AnimatedTextInView></h1>
 
@@ -39,7 +51,11 @@ export default function Hero({ data }) {
 
             <h1 className={styles.titleHouse}><AnimatedTextInView duration={1}>{data.title[2]}</AnimatedTextInView></h1>
 
-            <span className={`${styles.button} button`}><AnimatedTextInView duration={0.5}>{data.cta}</AnimatedTextInView></span>
+            <div className={`${styles.button} button`} onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                <span style={{ position: "absolute" }}>{data.cta}</span>
+                <div className={styles.lottieWrapper}><Lottie style={{ position: "relative", display: "flex", width: "100%", transform: "scale(1.25)" }} autoplay={false} loop={false} lottieRef={lottieRef} animationData={hoverCircle} /></div>
+            </div>
 
 
         </section>
