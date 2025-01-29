@@ -3,11 +3,13 @@ import styles from "@/styles/Loader.module.css";
 import Image from "next/image";
 import { motion } from "motion/react"
 
+//Handles initial splash screen
+
 const Loader = ({ setLoading, loaderImage }) => {
 
     setTimeout(() => {
         setLoading(false);
-    }, 3000);
+    }, 3000); //Loads homepage after 3 seconds
 
     return (
         <div className={styles.loader}>

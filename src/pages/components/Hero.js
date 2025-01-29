@@ -8,23 +8,23 @@ import HeroImage from "./HeroImage";
 import Lottie from "lottie-react";
 import hoverCircle from "../../../public/lottie/circle.json";
 
+// Hero Section
 
 export default function Hero({ data }) {
 
+    //Handles hover in and out for lottie animation
     const lottieRef = useRef(null);
-
     const handleMouseEnter = () => {
         if (lottieRef.current) {
-            lottieRef.current.setDirection(1);
-            lottieRef.current.setSpeed(1.5);// Set direction to forward
+            lottieRef.current.setDirection(1); // Set direction to forward
+            lottieRef.current.setSpeed(1.5);
             lottieRef.current.play(); // Play the animation
         }
     };
-
     const handleMouseLeave = () => {
         if (lottieRef.current) {
             lottieRef.current.setDirection(-1); // Set direction to reverse
-            lottieRef.current.play();
+            lottieRef.current.play(); // Play the animation
         }
     };
 
@@ -32,7 +32,7 @@ export default function Hero({ data }) {
         <section className={styles.hero}>
 
             <div className={styles.nav}>
-                <NavTabs image={data.navImage} tabs={data.tabs} />
+                <NavTabs image={data.navImage} tabs={data.tabs} /> 
             </div>
 
 

@@ -9,22 +9,24 @@ import Lottie from "lottie-react";
 import hoverUnderline from "../../../public/lottie/underline.json";
 import { useRef } from "react";
 
+//About Section
 
 export default function About({ data }) {
-    const lottieRef = useRef(null);
 
+
+    //Handles hover in and out for lottie animation
+    const lottieRef = useRef(null);
     const handleMouseEnter = () => {
         if (lottieRef.current) {
-            lottieRef.current.setDirection(1);
-            lottieRef.current.setSpeed(1.5);// Set direction to forward
+            lottieRef.current.setDirection(1); // Set direction to forward
+            lottieRef.current.setSpeed(1.5);
             lottieRef.current.play(); // Play the animation
         }
     };
-
     const handleMouseLeave = () => {
         if (lottieRef.current) {
             lottieRef.current.setDirection(-1); // Set direction to reverse
-            lottieRef.current.play();
+            lottieRef.current.play(); // Play the animation
         }
     };
 

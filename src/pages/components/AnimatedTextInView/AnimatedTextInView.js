@@ -3,6 +3,8 @@ import { motion, useInView } from "motion/react"
 import SplitText from '../SplitText/SplitText'
 import { useRef } from 'react'
 
+//Fades in text, a character at a time, in random order
+
 export default function AnimatedTextInView({ 
   children, 
   className, 
@@ -14,11 +16,17 @@ export default function AnimatedTextInView({
   globalDelay = 0,
   fadeOut = false
 }) {
+
   const ref = useRef(null);
+
+  //Fades in when in view
+
   const isInView = useInView(ref, {
     threshold: threshold,
     once: true
   });
+
+  //Handles the random order
 
   const letterAnimation = {
     initial: fadeOut ? {opacity:1} : { opacity: 0 },

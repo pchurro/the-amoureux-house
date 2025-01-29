@@ -5,12 +5,16 @@ import { AnimatePresence, motion } from "motion/react";
 import ImageWrapper from "./ImageWrapper";
 import { useLenis } from 'lenis/react'
 
+// Nav tabs component
+
 export default function NavTabs({ tabs, image }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    //Stop scrolling when mobile menu is open
 
     const lenis = useLenis();
 

@@ -1,6 +1,8 @@
 import styles from "@/styles/LineSeparator.module.css";
 import { motion } from "motion/react"
 
+//Line separator component to separate the sections
+
 export default function LineSeparator() {
     return (
         <div className={styles.separator}>

@@ -7,6 +7,7 @@ import About from "./components/About";
 import { useState, useRef } from "react";
 import Loader from "./components/Loader";
 
+//Data
 
 const heroData =
 {

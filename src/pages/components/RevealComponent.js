@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
 
+
+//Simple wrapper component that renders its child when its in view
 export default function RevealComponent({ children }) {
     const ref = useRef(null);
   

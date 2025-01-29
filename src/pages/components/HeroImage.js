@@ -4,7 +4,13 @@ import styles from "@/styles/Hero.module.css";
 import Image from "next/image";
 import useMouse from "@react-hook/mouse-position";
 
+
+//Hero image component
+
 export default function HeroImage({ heroData }) {
+
+    //Handles "playfilm" hover animation
+    
     const [hoveringFilm, setHoveringFilm] = useState(false);
 
     const handleMouseEnter = () => setHoveringFilm(true);

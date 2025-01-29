@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import styles from "@/styles/ImageWrapper.module.css";
 
+//Component to wrap images in so they have a cover that slides out when in view
+
 export default function ImageWrapper({ image, direction, width = "100%" }) {
   return (
     <div className={styles.imageWrapper} style={{width}}>
