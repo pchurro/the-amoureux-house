@@ -120,7 +120,7 @@ export default function About({ data }) {
                 onMouseLeave={handleMouseLeave}>
                 <span style={{ position: "absolute" }}>{data.cta}</span>
                 <div className={styles.lottieWrapper}>
-                    <Lottie style={{ position: "relative", display: "flex", width: "100%", top: "20%", transform: "scale(0.6)" }} autoplay={false} loop={false} lottieRef={lottieRef} animationData={hoverUnderline} />
+                    <Lottie style={{ position: "relative", display: "flex", width: "100%", transform: "scale(0.6) translateY(45%)" }} autoplay={false} loop={false} lottieRef={lottieRef} animationData={hoverUnderline} />
                 </div>
             </div>
 
